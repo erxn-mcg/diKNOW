@@ -1,0 +1,225 @@
+html {
+  overflow: hidden;
+}
+
+/* Font and background settings - fonts loaded from Google Fonts in index.html */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #444444;
+  /* Set custom background-image for document here */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.btn-primary {
+  background-color: #128f1d !important;
+  border-color: #128f1d !important;
+}
+
+.bg-primary {
+  background-color: #128f1d !important;
+}
+
+.text-danger,
+.bg-danger {
+  color: #6b0f0c !important;
+}
+
+.text-warning,
+.bg-warning {
+  color: #f1d69e !important;
+}
+
+.text-success,
+.bg-success {
+  color: #09946f !important;
+}
+
+/* Style links on the player card */
+/* a { */
+/* color: #006dc1!important; */
+/* } */
+
+a:hover {
+  text-decoration: none;
+}
+
+#playercard_categories .list-group-item:hover {
+  background-color: #eeeeee;
+}
+
+/* Which elements to hide on start of game */
+#cards,
+#summary,
+#startGame,
+#startTurn,
+#newGame,
+#waiting,
+#showSummary {
+  display: none;
+}
+
+/* Style cards */
+#playercard {
+  min-width: 240px;
+  background-color: #fff;
+  -webkit-box-shadow: 8px 8px 30px #000000;
+  box-shadow: 8px 8px 30px #000000;
+}
+
+#computercard {
+  min-width: 240px;
+  background-color: transparent;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: none;
+  border-radius: 0.8rem;
+}
+
+.rounded {
+  border-radius: 0.8rem !important;
+}
+
+/* Style summary after the game */
+
+#summaryCard {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#summary_list {
+  font-size: 0.9rem;
+}
+
+.summary_left,
+.summary_right {
+  width: 38%;
+}
+
+.summary_center {
+  width: 24%;
+  font-size: 0.8rem;
+}
+
+.winner {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 576px) {
+  #playercard {
+    z-index: 10;
+    position: relative;
+    top: 50px;
+    max-width: 240px;
+  }
+
+  #computercard {
+    z-index: 5;
+    position: relative;
+    left: -150px;
+    max-width: 240px;
+  }
+
+  #buttons {
+    margin-top: 50px;
+  }
+
+  #summary {
+    margin-bottom: -40px;
+  }
+}
+
+.card-deck {
+  overflow: visible !important;
+}
+
+.scrolling-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.transparent-list .list-group-item {
+  background-color: transparent !important;
+  color: transparent !important;
+  border: 0;
+}
+
+.flag {
+  width: 2em;
+  height: 1.5em;
+}
+
+.flip-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.flip-container.flip .back {
+  transform: rotateY(0deg);
+}
+
+.flip-container.flip .front {
+  transform: rotateY(180deg);
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.front {
+  transform: rotateY(0deg);
+  background-color: #fff;
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 8px 8px 30px #000000;
+  box-shadow: 8px 8px 30px #000000;
+}
+
+.back {
+  z-index: 2;
+  transform: rotateY(-180deg);
+  background-image: radial-gradient(#b3daaf, #37ac40);
+  color: transparent !important;
+  border: 10px solid rgba(255, 255, 255, 1);
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 8px 8px 30px #000000;
+  box-shadow: 8px 8px 30px #000000;
+}
